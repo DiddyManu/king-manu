@@ -86,14 +86,12 @@
         }
     </style>
     <script>
-        function checkPassword() {
-            const password = document.getElementById("password").value;
-            if (password === "kingmanu") {
-                document.getElementById("password-section").style.display = "none";
-                document.getElementById("cat-gifs").style.display = "block";
-            } else {
-                alert("Incorrect password. Try again!");
-            }
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+            document.getElementById(sectionId).classList.add("active");
         }
 
         function addVideos(sectionId, urls) {
@@ -107,7 +105,7 @@
                 }
             });
         }
-
+        
         document.addEventListener("DOMContentLoaded", () => {
             addVideos("pro-killing", ["https://1drv.ms/v/c/fb0ec3b98e868084/Ed6cdzdyiY5Ep2f5S-ooP5ABU1xSowQY313NjMWjeN_PDQ?e=MRcIS8", "https://1drv.ms/v/c/fb0ec3b98e868084/ERVRFPqn721Lm-daDwy-7qYBJlHrdpQyccfmfddEoMxNVw", "https://1drv.ms/v/c/fb0ec3b98e868084/ESFGvrifixZHstoPLSu2chgB5t1L_N7umSGCsxZ5D0w7Bg?e=ZS3ayz", "https://1drv.ms/v/c/fb0ec3b98e868084/EQ-R75XLRCpFgRwjAa_771oBpSu6mJP45rNNKYvUnThjpg?e=rtEzDR", "https://1drv.ms/v/c/fb0ec3b98e868084/EUshBe2FLcpNnZsAMY50bFwBdh4Zuy6chEpKPUePQvpy8A?e=K0dUkm", "https://1drv.ms/v/c/fb0ec3b98e868084/EWg53qFFnRhPu8Vmb-2BnPIBiUjDY_IHz1tJ3u2ptavRuw?e=B8ueqs", "https://1drv.ms/v/c/fb0ec3b98e868084/ET7Je_tcbjlCnSv8zMPXWqoBS0VO_FfpOYqMLVxy155F2w?e=MK74Hq", "https://1drv.ms/v/c/fb0ec3b98e868084/EX9CMHbq0ZtMpCCOU9P2U-QBxBE24AIDkL8jVGqieedJ5g?e=xegNaO", "https://1drv.ms/v/c/fb0ec3b98e868084/EZpxjJGfakJBjV1EWxcOnoIBOYj91vVj9pxKemTJGlyRvQ?e=CZmQlt", "https://1drv.ms/v/c/fb0ec3b98e868084/ERjOWaNRX4xBv9suRbd6jx8BNZOBXmqUNYSUue5IUaIE_Q?e=7MNTxz", "https://1drv.ms/v/c/fb0ec3b98e868084/Ed6kCu5zbllOoW9zduG93egBH14nhunZ52xZ-V_fQagzsg?e=mv3IF2"]);
             addVideos("noob-killing", ["https://1drv.ms/v/c/fb0ec3b98e868084/Ee-FUA2mv1xIhmksNedo5gwBdTuk4YuTvzv20-0z2kuIcg?e=fca3zW", "https://1drv.ms/v/c/fb0ec3b98e868084/EaSiowpgqzZBro5fICP4QasBhnIGN7RBj4cuRHQwDppnQg?e=eRbFUL", "https://1drv.ms/v/c/fb0ec3b98e868084/EdhC8_WfYZ5AtdDz1dtpmK0By6m9-jAUA_z9Mlzu-jx4qA?e=GdFfgt", "https://1drv.ms/v/c/fb0ec3b98e868084/EQqHk5lis1dEuwhf-yFi82YBZIdXb_kxuJZgRfd1DS9LbQ?e=bVc3Zg", "https://1drv.ms/v/c/fb0ec3b98e868084/EXM9GBOIjgNGkNlePM3B7BcB-qyL8H_wBshKnu4M6PeZLA?e=1fWC99", "https://1drv.ms/v/c/fb0ec3b98e868084/EQFN-wB2eydEpx8dUewyS8UBavDJr_RgeJCDPJxqYNz_Ug?e=etSnLU", "https://1drv.ms/v/c/fb0ec3b98e868084/EUNzg9xFP6lFosAus4gGaf0BvvYDmptBXJ4l8WxDqKSBeA?e=EKdLQd", "https://1drv.ms/v/c/fb0ec3b98e868084/EYqkgqL0RTlDq6aRnMAhaBEBk418VrqwUXpxXHD0Uki0Xg?e=3wLIjW", "https://1drv.ms/v/c/fb0ec3b98e868084/EWtjJUnbkPpInQIlS0B7vB0BgXVfG9qHzPwam5Q4KN1nng?e=qvQrIF", "https://1drv.ms/v/c/fb0ec3b98e868084/EdVLRJ8IpkdDjJTjV3BZ0zEBqgFNMX2G6VEKEHiIjBBhtQ?e=Qjk5oU", "https://1drv.ms/v/c/fb0ec3b98e868084/EVVIqjDlQDFNvJWt6t1oabUBlWqJLv__PEb-jXyEZQC8-Q?e=lSVh3R"]);
@@ -127,6 +125,13 @@
 
     <nav>
         <a href="#about-me">About Me</a>
+        <a href="#" onclick="showSection('pro-killing')">Pro Killing</a>
+        <a href="#" onclick="showSection('noob-killing')">Noob Killing</a>
+        <a href="#" onclick="showSection('pops')">Pops</a>
+        <a href="#" onclick="showSection('macro')">Macro</a>
+        <a href="#" onclick="showSection('pro-friends-moments')">Pro Friends Moments</a>
+        <a href="#" onclick="showSection('u-suck')">U Suck!</a>
+        <a href="#" onclick="showSection('tricks')">Tricks</a>
         <a href="#agario-clips">Agar.io Clips</a>
         <a href="#password-section">Cat Gifs</a>
     </nav>
