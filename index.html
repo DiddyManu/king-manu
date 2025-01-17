@@ -78,6 +78,7 @@
             border-radius: 5px;
             text-align: center;
             font-size: 16px;
+            cursor: pointer;
         }
         .cta-button:hover {
             background: #2980b9;
@@ -88,7 +89,25 @@
             background-color: #333;
             color: white;
         }
+        #password-section {
+            display: none;
+            text-align: center;
+        }
+        #cat-gifs {
+            display: none;
+        }
     </style>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "kingmanu") {
+                document.getElementById("password-section").style.display = "none";
+                document.getElementById("cat-gifs").style.display = "block";
+            } else {
+                alert("Incorrect password. Try again!");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -133,8 +152,19 @@
         <!-- Cats Section -->
         <div class="section" id="cats">
             <h2>Cat Gifs</h2>
-            <p>Love cats as much as I do? Click below to explore some hilarious cat gifs!</p>
-            <a href="https://example.com/cats" class="cta-button">View Cat Gifs</a>
+            <p>Love cats as much as I do? Enter the secret password to access exclusive cat gifs!</p>
+            <div id="password-section">
+                <input type="password" id="password" placeholder="Enter password">
+                <button class="cta-button" onclick="checkPassword()">View Cat Gifs</button>
+            </div>
+            <div id="cat-gifs">
+                <p>Here are the cat gifs you’ve been waiting for!</p>
+                <div class="gallery">
+                    <img src="cat1.gif" alt="Cat Gif 1">
+                    <img src="cat2.gif" alt="Cat Gif 2">
+                    <img src="cat3.gif" alt="Cat Gif 3">
+                </div>
+            </div>
         </div>
     </div>
 
