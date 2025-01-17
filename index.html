@@ -89,13 +89,14 @@
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
             sections.forEach(section => {
-                section.classList.remove("active");
+                section.style.display = "none"; // Hide all sections
             });
-            document.getElementById(sectionId).classList.add("active");
+            document.getElementById(sectionId).style.display = "block"; // Show the selected section
         }
 
         function addVideos(sectionId, urls) {
             const section = document.getElementById(sectionId);
+            section.innerHTML = ""; // Clear existing videos
             urls.forEach((url) => {
                 if (url) {
                     const videoContainer = document.createElement("div");
