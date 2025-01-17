@@ -58,6 +58,33 @@
             max-width: 1200px;
             margin: 20px auto;
         }
+        .cta-button {
+            background-color: gold;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffd700;
+        }
+        .scrolling-text {
+            overflow: hidden;
+            white-space: nowrap;
+            color: gold;
+            font-size: 18px;
+            text-align: center;
+            animation: scrollText 10s linear infinite;
+        }
+        
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         .section {
             display: none;
             margin-bottom: 40px;
@@ -269,6 +296,7 @@
         <!-- About Me Section -->
         <div class="section bio active" id="about-me">
             <h2>About Me</h2>
+            <button class="cta-button">See My Skills</button>
             <img src="profile.jpg" alt="Manu's Profile Picture">
             <p>Welcome to the Kingdom of King Manu, the undisputed #1 of the EU and the ruler of all things Agar.io. Born to conquer, raised to dominate, I’ve crushed every leaderboard and left countless players in my wake, all while keeping it casually savage. They call me the King for a reason—if you're still here, it’s because you're brave enough to watch a legend in action. Don’t worry, though, I’m not here to make you feel bad (unless you try to challenge me, then it’s game over). So sit back, enjoy, and let the King show you how it’s done—because in my kingdom, only the strong survive.</p>
             <p>Follow me on Instagram: <a href="https://www.instagram.com/manues.io?igsh=MTRmcXZuZzUyNjZtMA==" target="_blank">@Manues.io</a></p>    
