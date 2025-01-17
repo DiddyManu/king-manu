@@ -10,8 +10,15 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #1c1c1c, #333); /* Donkere gradiënt */
-            color: #f5f5f5;
+            background: linear-gradient(135deg, #1e1e1e, #444) fixed;
+            color: #ddd;
+            animation: gradientBackground 10s ease infinite;
+        }
+        
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header {
             background-color: #333;
@@ -51,8 +58,14 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Grotere schaduw voor meer impact */
             transition: transform 0.3s; /* Animatie bij hover */
         }
-        .section:hover {
-            transform: translateY(-5px); /* Subtiel zweven bij hover */
+        .section {
+            display: none; /* Hide sections by default */
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid gold;
         }
         .section.active {
             display: block;
