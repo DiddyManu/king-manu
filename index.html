@@ -38,7 +38,7 @@
             margin: 20px auto;
         }
         .section {
-            display: none; /* Hide sections by default */
+            display: none;
             margin-bottom: 40px;
             padding: 20px;
             background: white;
@@ -46,11 +46,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .section.active {
-            display: block; /* Show the active section */
-        }
-        .section h2, .section h3 {
-            text-align: center;
-            margin-bottom: 20px;
+            display: block;
         }
         .bio img {
             border-radius: 50%;
@@ -61,7 +57,7 @@
         }
         .responsive-video {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -75,24 +71,6 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .video-controls {
-        text-align: center;
-        margin-top: 10px;
-        }
-    
-        .video-controls button {
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-    
-        .video-controls button:hover {
-            background-color: #2980b9;
-        } 
         footer {
             text-align: center;
             padding: 20px;
@@ -117,44 +95,26 @@
                 alert("Incorrect password. Try again!");
             }
         }
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
             sections.forEach(section => {
-                section.classList.remove("active"); // Hide all sections
+                section.classList.remove("active");
             });
-            document.getElementById(sectionId).classList.add("active"); // Show the selected section
+            document.getElementById(sectionId).classList.add("active");
         }
 
         function addVideos(sectionId, urls) {
             const section = document.getElementById(sectionId);
-            section.innerHTML = ""; // Clear existing videos
-            urls.forEach((url, index) => {
+            section.innerHTML = "";
+            urls.forEach(url => {
                 if (url) {
-                    const videoContainer = document.createElement("div");
-                    videoContainer.classList.add("responsive-video");
-        
-                    // Voeg de video iframe en Volledig scherm-knop toe
-                    const videoId = `${sectionId}-video-${index + 1}`; // Unieke ID per video
-                    videoContainer.innerHTML = `
-                        <iframe src="${url}" id="${videoId}" allowfullscreen></iframe>
-                        <div class="video-controls">
-                            <button onclick="enterFullScreen('${videoId}')">Volledig scherm</button>
-                        </div>
-                    `;
-                    section.appendChild(videoContainer);
+                    section.innerHTML += `
+                        <div class="responsive-video">
+                            <iframe src="${url}" allowfullscreen></iframe>
+                        </div>`;
                 }
             });
-        }
-    
-        function enterFullScreen(videoId) {
-            const video = document.getElementById(videoId);
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) { /* Safari */
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { /* IE11 */
-                video.msRequestFullscreen();
-            }
         }
         
         document.addEventListener("DOMContentLoaded", () => {
