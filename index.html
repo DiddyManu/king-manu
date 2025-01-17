@@ -56,6 +56,21 @@
         .section.active {
             display: block;
         }
+        .button {
+            background-color: #f4d03f; /* Goudkleur */
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #cba735; /* Donkerder goud */
+            transform: scale(1.1); /* Iets groter bij hover */
+        }
         .bio img {
             border-radius: 50%;
             width: 150px;
@@ -82,8 +97,10 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: white;
+            background-color: #222;
+            color: #f4d03f;
+            border-top: 2px solid #f4d03f; /* Gouden scheidingslijn */
+            font-size: 14px;
         }
         #password-section {
             text-align: center;
