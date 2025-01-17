@@ -46,7 +46,6 @@
         }
         .section h2 {
             text-align: center;
-            margin-bottom: 20px;
         }
         .bio img {
             border-radius: 50%;
@@ -60,10 +59,8 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
-        .gallery iframe {
+        .gallery iframe, .gallery img {
             width: 100%;
-            height: 200px;
-            border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -72,6 +69,13 @@
             padding: 20px;
             background-color: #333;
             color: white;
+        }
+        #password-section {
+            text-align: center;
+        }
+        #cat-gifs {
+            display: none; /* Cat gifs are hidden by default */
+            text-align: center;
         }
     </style>
     <script>
@@ -82,6 +86,16 @@
                 document.getElementById("cat-gifs").style.display = "block";
             } else {
                 alert("Incorrect password. Try again!");
+            }
+        }
+
+        function preventCatGifs() {
+            const catGifsSection = document.getElementById("cat-gifs");
+            if (catGifsSection.style.display === "block") {
+                return true; // Allow navigation if the password is correct
+            } else {
+                alert("You need the correct password to view Cat Gifs!");
+                return false; // Prevent navigation
             }
         }
     </script>
@@ -95,7 +109,7 @@
     <nav>
         <a href="#about-me">About Me</a>
         <a href="#agario-clips">Agar.io Clips</a>
-        <a href="#cat-gifs">Cat Gifs</a>
+        <a href="#password-section" onclick="return preventCatGifs()">Cat Gifs</a>
     </nav>
 
     <div class="container">
@@ -115,8 +129,8 @@
             <div class="section" id="pro-killing">
                 <h3>Pro Killing</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!12345"></iframe>
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!67890"></iframe>
+                    <iframe src="https://1drv.ms/v/c/fb0ec3b98e868084/ERVRFPqn721Lm-daDwy-7qYBJlHrdpQyccfmfddEoMxNVw"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE2"></iframe>
                 </div>
             </div>
 
@@ -124,7 +138,7 @@
             <div class="section" id="noob-killing">
                 <h3>Noob Killing</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!11111"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE3"></iframe>
                 </div>
             </div>
 
@@ -132,7 +146,7 @@
             <div class="section" id="pops">
                 <h3>Pops</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!22222"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE4"></iframe>
                 </div>
             </div>
 
@@ -140,7 +154,7 @@
             <div class="section" id="macro">
                 <h3>Macro</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!33333"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE5"></iframe>
                 </div>
             </div>
 
@@ -148,7 +162,7 @@
             <div class="section" id="pro-friends-moments">
                 <h3>Pro Friends Moments</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!44444"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE6"></iframe>
                 </div>
             </div>
 
@@ -156,7 +170,7 @@
             <div class="section" id="u-suck">
                 <h3>U Suck!</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!55555"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE7"></iframe>
                 </div>
             </div>
 
@@ -164,7 +178,7 @@
             <div class="section" id="tricks">
                 <h3>Tricks</h3>
                 <div class="gallery">
-                    <iframe src="https://onedrive.live.com/embed?cid=FB0EC3B98E868084&resid=FB0EC3B98E868084!66666"></iframe>
+                    <iframe src="https://onedrive.live.com/embed?cid=EXAMPLE8"></iframe>
                 </div>
             </div>
         </div>
