@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu's Throne</title>
+    <title>Manu's Agar.io Clips</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +11,6 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
         }
         header {
             background-color: #333;
@@ -19,44 +18,10 @@
             padding: 20px;
             text-align: center;
         }
-        nav {
-            background-color: #444;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
-        }
-        .section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .bio img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 10px;
         }
         .gallery {
             display: grid;
@@ -68,8 +33,24 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            text-align: center;
+        }
         .cta-button {
-            display: inline-block;
+            display: block;
             margin: 20px auto;
             padding: 10px 20px;
             background: #3498db;
@@ -83,18 +64,12 @@
         .cta-button:hover {
             background: #2980b9;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
         #password-section {
-            display: none;
             text-align: center;
         }
         #cat-gifs {
             display: none;
+            text-align: center;
         }
     </style>
     <script>
@@ -111,65 +86,58 @@
 </head>
 <body>
     <header>
-        <h1>Manu's Throne</h1>
-        <p>Top-tier plays, videos, and much more!</p>
+        <h1>Manu's Agar.io Clips</h1>
+        <p>The best Agar.io plays and moments!</p>
     </header>
 
-    <nav>
-        <a href="#bio">About</a>
-        <a href="#agar-videos">Agar.io Clips</a>
-        <a href="#cats">Cat Gifs</a>
-    </nav>
-
     <div class="container">
-        <!-- Bio Section -->
-        <div class="section bio" id="bio">
-            <img src="profile.jpg" alt="Manu's Profile Picture">
-            <h2>About Manu</h2>
-            <p>Hi! I’m Manu, a passionate Agar.io player known for my elite plays. Follow my journey and check out my clips!</p>
-            <p>Follow me on Instagram: <a href="https://www.instagram.com/manues.io?igsh=MTRmcXZuZzUyNjZtMA==" target="_blank">@Manues.io</a></p>
-        </div>
-
         <!-- Agar.io Video Section -->
-        <div class="section" id="agar-videos">
+        <div class="section">
             <h2>Agar.io Clips</h2>
             <div class="gallery">
+                <!-- Video 1 -->
                 <video controls>
-                    <source src="clip1.mp4" type="video/mp4">
+                    <source src="https://1drv.ms/v/c/fb0ec3b98e868084/ERVRFPqn721Lm-daDwy-7qYBJlHrdpQyccfmfddEoMxNVw" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <!-- Video 2 -->
                 <video controls>
-                    <source src="clip2.mp4" type="video/mp4">
+                    <source src="https://onedrive.live.com/download?cid=YOUR_LINK_2" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <!-- Video 3 -->
                 <video controls>
-                    <source src="clip3.mp4" type="video/mp4">
+                    <source src="https://onedrive.live.com/download?cid=YOUR_LINK_3" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Video 4 -->
+                <video controls>
+                    <source src="https://onedrive.live.com/download?cid=YOUR_LINK_4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
 
-        <!-- Cats Section -->
-        <div class="section" id="cats">
+        <!-- Cat Gifs Section -->
+        <div class="section" id="password-section">
             <h2>Cat Gifs</h2>
-            <p>Love cats as much as I do? Enter the secret password to access exclusive cat gifs!</p>
-            <div id="password-section">
-                <input type="password" id="password" placeholder="Enter password">
-                <button class="cta-button" onclick="checkPassword()">View Cat Gifs</button>
-            </div>
-            <div id="cat-gifs">
-                <p>Here are the cat gifs you’ve been waiting for!</p>
-                <div class="gallery">
-                    <img src="cat1.gif" alt="Cat Gif 1">
-                    <img src="cat2.gif" alt="Cat Gif 2">
-                    <img src="cat3.gif" alt="Cat Gif 3">
-                </div>
+            <p>Enter the secret password to access my cat gifs!</p>
+            <input type="password" id="password" placeholder="Enter password">
+            <button class="cta-button" onclick="checkPassword()">Submit</button>
+        </div>
+
+        <div class="section" id="cat-gifs">
+            <h2>Here are the Cat Gifs!</h2>
+            <div class="gallery">
+                <img src="cat1.gif" alt="Cat Gif 1">
+                <img src="cat2.gif" alt="Cat Gif 2">
+                <img src="cat3.gif" alt="Cat Gif 3">
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Manu's Highlights. All rights reserved.</p>
+        <p>&copy; 2025 Manu's Agar.io Clips. All rights reserved.</p>
     </footer>
 </body>
 </html>
