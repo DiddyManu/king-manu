@@ -55,24 +55,11 @@
             object-fit: cover;
             margin-bottom: 10px;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .gallery iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
         .responsive-video {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
             height: 0;
             overflow: hidden;
-            display: none; /* Hidden by default */
         }
         .responsive-video iframe {
             position: absolute;
@@ -80,6 +67,9 @@
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         footer {
             text-align: center;
@@ -87,31 +77,45 @@
             background-color: #333;
             color: white;
         }
+        #password-section {
+            text-align: center;
+        }
+        #cat-gifs {
+            display: none;
+            text-align: center;
+        }
     </style>
     <script>
-        function addVideo(sectionId, videoUrls) {
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "kingmanu") {
+                document.getElementById("password-section").style.display = "none";
+                document.getElementById("cat-gifs").style.display = "block";
+            } else {
+                alert("Incorrect password. Try again!");
+            }
+        }
+
+        function addVideos(sectionId, urls) {
             const section = document.getElementById(sectionId);
-            videoUrls.forEach(url => {
+            urls.forEach((url) => {
                 if (url) {
-                    const videoContainer = document.createElement('div');
-                    videoContainer.className = 'responsive-video';
-                    videoContainer.style.display = 'block';
-                    const iframe = document.createElement('iframe');
-                    iframe.src = url;
-                    iframe.allowFullscreen = true;
-                    videoContainer.appendChild(iframe);
+                    const videoContainer = document.createElement("div");
+                    videoContainer.classList.add("responsive-video");
+                    videoContainer.innerHTML = `<iframe src="${url}" allowfullscreen></iframe>`;
                     section.appendChild(videoContainer);
                 }
             });
         }
+
         document.addEventListener("DOMContentLoaded", () => {
-            addVideo('pro-killing', ["https://1drv.ms/v/c/fb0ec3b98e868084/ERVRFPqn721Lm-daDwy-7qYBJlHrdpQyccfmfddEoMxNVw", "video2.mp4", ""]);
-            addVideo('noob-killing', ["video3.mp4", ""]);
-            addVideo('pops', ["video4.mp4", "", ""]);
-            addVideo('macro', ["video5.mp4", "", ""]);
-            addVideo('pro-friends-moments', ["", "", ""]);
-            addVideo('u-suck', ["", ""]);
-            addVideo('tricks', ["", ""]);
+            addVideos("pro-killing", ["video1.mp4", "", "", "", "", "", "", "", "", ""]);
+            addVideos("noob-killing", ["", "", "", "", "", "", "", "", "", ""]);
+            addVideos("pops", ["", "", "", "", "", "", "", "", "", ""]);
+            addVideos("macro", ["", "", "", "", "", "", "", "", "", ""]);
+            addVideos("pro-friends-moments", ["", "", "", "", "", "", "", "", "", ""]);
+            addVideos("u-suck", ["", "", "", "", "", "", "", "", "", ""]);
+            addVideos("tricks", ["", "", "", "", "", "", "", "", "", ""]);
         });
     </script>
 </head>
@@ -139,26 +143,64 @@
         <!-- Agar.io Clips Section -->
         <div class="section" id="agario-clips">
             <h2>Agar.io Clips</h2>
+
+            <!-- Pro Killing -->
             <div class="section" id="pro-killing">
                 <h3>Pro Killing</h3>
             </div>
+
+            <!-- Noob Killing -->
             <div class="section" id="noob-killing">
                 <h3>Noob Killing</h3>
             </div>
+
+            <!-- Pops -->
             <div class="section" id="pops">
                 <h3>Pops</h3>
             </div>
+
+            <!-- Macro -->
             <div class="section" id="macro">
                 <h3>Macro</h3>
             </div>
+
+            <!-- Pro Friends Moments -->
             <div class="section" id="pro-friends-moments">
                 <h3>Pro Friends Moments</h3>
             </div>
+
+            <!-- U Suck -->
             <div class="section" id="u-suck">
                 <h3>U Suck!</h3>
             </div>
+
+            <!-- Tricks -->
             <div class="section" id="tricks">
                 <h3>Tricks</h3>
+            </div>
+        </div>
+
+        <!-- Cat Gifs Section -->
+        <div class="section" id="password-section">
+            <h2>Cat Gifs</h2>
+            <p>Enter the secret password to access my cat gifs!</p>
+            <input type="password" id="password" placeholder="Enter password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+
+        <div class="section" id="cat-gifs">
+            <h2>Here are some Cat Gifs!</h2>
+            <div class="gallery">
+                <img src="Catgif1.gif" alt="Cat Gif 1">
+                <img src="Catgif2.gif" alt="Cat Gif 2">
+                <img src="Catgif3.gif" alt="Cat Gif 3">
+                <img src="Catgif4.gif" alt="Cat Gif 4">
+                <img src="Catgif5.gif" alt="Cat Gif 5">
+                <img src="Catgif6.gif" alt="Cat Gif 6">
+                <img src="Catgif7.gif" alt="Cat Gif 7">
+                <img src="Catgif8.gif" alt="Cat Gif 8">
+                <img src="Catgif9.gif" alt="Cat Gif 9">
+                <img src="Catgif10.gif" alt="Cat Gif 10">
             </div>
         </div>
     </div>
