@@ -132,8 +132,8 @@
                 if (url) {
                     const videoContainer = document.createElement("div");
                     videoContainer.classList.add("responsive-video");
-                    
-                    // Voeg de video iframe toe
+        
+                    // Voeg de video iframe en Volledig scherm-knop toe
                     const videoId = `${sectionId}-video-${index + 1}`; // Unieke ID per video
                     videoContainer.innerHTML = `
                         <iframe src="${url}" id="${videoId}" allowfullscreen></iframe>
