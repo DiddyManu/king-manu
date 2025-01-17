@@ -86,6 +86,15 @@
         }
     </style>
     <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            if (password === "kingmanu") {
+                document.getElementById("password-section").style.display = "none";
+                document.getElementById("cat-gifs").style.display = "block";
+            } else {
+                alert("Incorrect password. Try again!");
+            }
+        }
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
             sections.forEach(section => {
