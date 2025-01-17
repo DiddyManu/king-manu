@@ -38,11 +38,15 @@
             margin: 20px auto;
         }
         .section {
+            display: none; /* Hide sections by default */
             margin-bottom: 40px;
             padding: 20px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section.active {
+            display: block; /* Show the active section */
         }
         .section h2, .section h3 {
             text-align: center;
@@ -98,9 +102,9 @@
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
             sections.forEach(section => {
-                section.style.display = "none"; // Hide all sections
+                section.classList.remove("active"); // Hide all sections
             });
-            document.getElementById(sectionId).style.display = "block"; // Show the selected section
+            document.getElementById(sectionId).classList.add("active"); // Show the selected section
         }
 
         function addVideos(sectionId, urls) {
@@ -124,6 +128,8 @@
             addVideos("pro-friends-moments", ["https://1drv.ms/v/c/fb0ec3b98e868084/ER1nXYkm1uZLn9bDv_cTOc8Bvo7KUYldHZ84jxZJZm1fOw?e=hLEwF2", "", "", "", "", "", "", "", "", ""]);
             addVideos("u-suck", ["https://1drv.ms/v/c/fb0ec3b98e868084/EfLM0Cio9fBPsrmLuWwjBOoBryB8_OnBmhxFoP14sVLSUQ?e=p9SXhP", "https://1drv.ms/v/c/fb0ec3b98e868084/EVT3fXAmYeZClwINcTtPCaUBgX_jh2JuOu_UisMmD6UbHg?e=TAWB2R", "https://1drv.ms/v/c/fb0ec3b98e868084/Eb7b44OquVtEkAmTAim5FbIB6Gm3Qn6pGVK3uhhK7DCQKw?e=lujjLN", "", "", "", "", "", "", ""]);
             addVideos("tricks", ["https://1drv.ms/v/c/fb0ec3b98e868084/EWtjJUnbkPpInQIlS0B7vB0BgXVfG9qHzPwam5Q4KN1nng?e=qvQrIF", "", "", "https://1drv.ms/v/c/fb0ec3b98e868084/ETGeEEBwW2FOtbIdTLFMaVEBNguMrGWmNoQgyW9JsTyMuQ?e=hxs87c", "", "", "", "", "", ""]);
+        // Show the default section
+            showSection("about-me");
         });
     </script>
 </head>
@@ -134,7 +140,7 @@
     </header>
 
     <nav>
-        <a href="#about-me">About Me</a>
+        <a href="#" onclick="showSection('about-me')">About Me</a>
         <a href="#" onclick="showSection('pro-killing')">Pro Killing</a>
         <a href="#" onclick="showSection('noob-killing')">Noob Killing</a>
         <a href="#" onclick="showSection('pops')">Pops</a>
@@ -142,57 +148,43 @@
         <a href="#" onclick="showSection('pro-friends-moments')">Pro Friends Moments</a>
         <a href="#" onclick="showSection('u-suck')">U Suck!</a>
         <a href="#" onclick="showSection('tricks')">Tricks</a>
-        <a href="#agario-clips">Agar.io Clips</a>
-        <a href="#password-section">Cat Gifs</a>
+        <a href="#" onclick="showSection('password-section')">Cat Gifs</a>
     </nav>
 
     <div class="container">
         <!-- About Me Section -->
-        <div class="section bio" id="about-me">
+        <div class="section bio active" id="about-me">
             <h2>About Me</h2>
             <img src="profile.jpg" alt="Manu's Profile Picture">
-            <p>Welcome to the Kingdom of King Manu, the undisputed #1 of the EU and the ruler of all things Agar.io. Born to conquer, raised to dominate, I’ve crushed every leaderboard and left countless players in my wake, all while keeping it casually savage. They call me the King for a reason—if you're still here, it’s because you're brave enough to watch a legend in action. Don’t worry, though, I’m not here to make you feel bad (unless you try to challenge me, then it’s game over). So sit back, enjoy, and let the King show you how it’s done—because in my kingdom, only the strong survive.</p>
-            <p>Follow me on Instagram: <a href="https://www.instagram.com/manues.io?igsh=MTRmcXZuZzUyNjZtMA==" target="_blank">@Manues.io</a></p>
+            <p>Welcome to the Kingdom of King Manu, the undisputed #1 of the EU and the ruler of all things Agar.io...</p>
         </div>
 
-        <!-- Agar.io Clips Section -->
-        <div class="section" id="agario-clips">
-            <h2>Agar.io Clips</h2>
+        <div class="section" id="pro-killing">
+            <h2>Pro Killing</h2>
+        </div>
 
-            <!-- Pro Killing -->
-            <div class="section" id="pro-killing">
-                <h3>Pro Killing</h3>
-            </div>
+        <div class="section" id="noob-killing">
+            <h2>Noob Killing</h2>
+        </div>
 
-            <!-- Noob Killing -->
-            <div class="section" id="noob-killing">
-                <h3>Noob Killing</h3>
-            </div>
+        <div class="section" id="pops">
+            <h2>Pops</h2>
+        </div>
 
-            <!-- Pops -->
-            <div class="section" id="pops">
-                <h3>Pops</h3>
-            </div>
+        <div class="section" id="macro">
+            <h2>Macro</h2>
+        </div>
 
-            <!-- Macro -->
-            <div class="section" id="macro">
-                <h3>Macro</h3>
-            </div>
+        <div class="section" id="pro-friends-moments">
+            <h2>Pro Friends Moments</h2>
+        </div>
 
-            <!-- Pro Friends Moments -->
-            <div class="section" id="pro-friends-moments">
-                <h3>Pro Friends Moments</h3>
-            </div>
+        <div class="section" id="u-suck">
+            <h2>U Suck!</h2>
+        </div>
 
-            <!-- U Suck -->
-            <div class="section" id="u-suck">
-                <h3>U Suck!</h3>
-            </div>
-
-            <!-- Tricks -->
-            <div class="section" id="tricks">
-                <h3>Tricks</h3>
-            </div>
+        <div class="section" id="tricks">
+            <h2>Tricks</h2>
         </div>
 
         <!-- Cat Gifs Section -->
