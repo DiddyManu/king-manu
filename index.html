@@ -14,6 +14,13 @@
             color: #ddd;
             animation: gradientBackground 10s ease infinite;
         }
+        html, body {
+            overflow-x: hidden; /* Voorkom horizontaal scrollen */
+            overflow-y: auto;   /* Sta verticaal scrollen toe */
+            height: 100%;       /* Zorg ervoor dat het document de volledige hoogte gebruikt */
+            position: relative;
+            -webkit-overflow-scrolling: touch; /* Vloeiend scrollen op mobiel */
+        }
         @keyframes hitEffect {
             0% { transform: rotate(0deg); }
             25% { transform: rotate(-10deg); }
