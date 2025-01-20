@@ -272,8 +272,14 @@
             } 
             if (hits === 10) {
                 document.getElementById("funny-text").innerText = "Congrats, you did it! But at what cost? 😿";
+                setTimeout(gameWinRedirect, 2000); // Doorsturen na 2 seconden
             }
         }
+        function gameWinRedirect() {
+            alert("Congrats! Now go apologize to King Manu 😹");
+            window.location.href = "discord://discord.com/channels/@me/1313540124478537780";
+        }
+
         function checkPassword() {
             const password = document.getElementById("password").value;
             if (password === "kingmanu") {
