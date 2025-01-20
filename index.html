@@ -277,12 +277,15 @@
         }
         
         function gameWinRedirect() {
-            // Probeer de Discord-app te openen
-            window.location.href = "discord://discord.com/channels/1313540124478537780";
+            const discordAppIntent = "intent://discord.com/channels/1313540124478537780#Intent;scheme=https;package=com.discord;end;";
+            const discordWebUrl = "https://discord.com/channels/1313540124478537780";
         
-            // Fallback naar webversie als de app niet werkt
+            // Probeer de Discord-app te openen
+            window.location.href = discordAppIntent;
+        
+            // Fallback naar de webversie als de app niet opent na 2 seconden
             setTimeout(() => {
-                window.location.href = "https://discord.com/channels/1313540124478537780";
+                window.location.href = discordWebUrl;
             }, 2000);
         }
 
