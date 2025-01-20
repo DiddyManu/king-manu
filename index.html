@@ -14,6 +14,18 @@
             color: #ddd;
             animation: gradientBackground 10s ease infinite;
         }
+        @keyframes hitEffect {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+        .shake {
+            animation: hitEffect 0.3s ease-in-out;
+        }
+
         
         @keyframes gradientBackground {
             0% { background-position: 0% 50%; }
@@ -242,6 +254,14 @@
                 document.getElementById("funny-text").innerText = funnyTexts[hits];
                 hits++;
                 document.getElementById("hit-counter").innerText = `Hits: ${hits}/10`;
+        
+                // Voeg tijdelijke shake-animatie toe
+                let cat = document.getElementById("wolfy-cat");
+                cat.classList.add("shake");
+        
+                setTimeout(() => {
+                    cat.classList.remove("shake");
+                }, 300);
             } 
             if (hits === 10) {
                 document.getElementById("funny-text").innerText = "Congrats, you did it! But at what cost? 😿";
@@ -329,7 +349,7 @@
         <div class="section" id="wolfyy-game" style="display: none; text-align: center;">
             <h2 style="color: #FFD700;">Hit the Cat 10 Times! 🐱</h2>
             <p id="hit-counter" style="color: white;">Hits: 0/10</p>
-            <img src="WOLFY.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px;">
+            <img id="wolfy-cat" src="WOLFY.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px;">
             <p id="funny-text" style="color: #FFD700; font-weight: bold; margin-top: 20px;">Let's see what happens...</p>
         </div>
         <!-- About Me Section -->
