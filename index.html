@@ -277,7 +277,13 @@
         }
         
         function gameWinRedirect() {
-            window.location.href = "https://discord.com/channels/1313540124478537780";
+            // Probeer de Discord-app te openen
+            window.location.href = "discord://discord.com/channels/1313540124478537780";
+        
+            // Fallback naar webversie als de app niet werkt
+            setTimeout(() => {
+                window.location.href = "https://discord.com/channels/1313540124478537780";
+            }, 2000);
         }
 
         function checkPassword() {
