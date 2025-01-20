@@ -213,6 +213,40 @@
         
     </style>
     <script>
+        let hits = 0;
+        const funnyTexts = [
+            "Wow, you're really taking this out on the cat! 🐱",
+            "Are you sure you're not enjoying this too much? 😹",
+            "Poor kitty... but keep going! 😾",
+            "Your aim is worse than your Agar.io skills! ☠️",
+            "Wolfyy, even a hamster is faster than you! 🐹",
+            "King Manu would never approve of this behavior... or would he? 👑",
+            "Smack it harder, we need results! 💥",
+            "Guess who's stronger, you or the cat? 🤔",
+            "If the cat survives, you owe it an apology! 🫣",
+            "Game over! You're officially the crazy cat puncher! 😂"
+        ];
+    
+        function checkWolfyyGamePassword() {
+            const password = document.getElementById("wolfyy-password").value;
+            if (password === "wolfyqueen") {
+                document.getElementById("password-section-wolfyy").style.display = "none";
+                document.getElementById("wolfyy-game").style.display = "block";
+            } else {
+                alert("Nope, try again! 🐍");
+            }
+        }
+    
+        function hitTheCat() {
+            if (hits < 10) {
+                document.getElementById("funny-text").innerText = funnyTexts[hits];
+                hits++;
+                document.getElementById("hit-counter").innerText = `Hits: ${hits}/10`;
+            } 
+            if (hits === 10) {
+                document.getElementById("funny-text").innerText = "Congrats, you did it! But at what cost? 😿";
+            }
+        }
         function checkPassword() {
             const password = document.getElementById("password").value;
             if (password === "kingmanu") {
@@ -280,10 +314,24 @@
         <a href="#" onclick="showSection('pro-friends-moments')">Pro Friends Moments</a>
         <a href="#" onclick="showSection('u-suck')">U Suck!</a>
         <a href="#" onclick="showSection('tricks')">Tricks</a>
+        <a href="#" onclick="showSection('wolfyy-game')">🐱</a>
         <a href="#" onclick="showSection('password-section')">Car Gifs</a>
     </nav>
 
     <div class="container">
+        <div class="section" id="password-section-wolfyy">
+            <h2 style="color: #FFD700;">Secret Wolfyy Game 🐱</h2>
+            <p style="color: white;">Enter the secret password to unlock the game:</p>
+            <input type="password" id="wolfyy-password" placeholder="Enter password">
+            <button onclick="checkWolfyyGamePassword()">Unlock</button>
+        </div>
+        
+        <div class="section" id="wolfyy-game" style="display: none; text-align: center;">
+            <h2 style="color: #FFD700;">Hit the Cat 10 Times! 🐱</h2>
+            <p id="hit-counter" style="color: white;">Hits: 0/10</p>
+            <img src="cat.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px;">
+            <p id="funny-text" style="color: #FFD700; font-weight: bold; margin-top: 20px;">Let's see what happens...</p>
+        </div>
         <!-- About Me Section -->
         <div class="section bio active" id="about-me">
             <h2>About Me</h2>
