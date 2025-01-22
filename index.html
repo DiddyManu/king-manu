@@ -268,9 +268,11 @@
                 document.getElementById("password-section-wolfyy").style.display = "none";
                 document.getElementById("wolfyy-game").style.display = "block";
         
-                // Start de achtergrondvideo
-                const video = document.getElementById("wolfyy-video");
-                video.play();
+                // Start the background video
+                let video = document.getElementById("wolfyy-video");
+                if (video) {
+                    video.play();
+                }
             } else {
                 alert("Nope, try again! 🐍");
             }
@@ -389,10 +391,10 @@
         </div>
         
         <div class="section" id="wolfyy-game" style="display: none; text-align: center;">
-            <video id="https://onedrive.live.com/embed?id=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f?cid=FB0EC3B98E868084&resId=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f&ithint=video&e=NP1oiu&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy9mYjBlYzNiOThlODY4MDg0L0VSejF5TmtqZEhGRGtLalhiNngzZnc4QmNJUWd0TzBzWFFmRnozdmdTNFhqYXc_ZT1OUDFvaXU" autoplay loop muted>
-                <source src="wolfybg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <video id="wolfyy-video" autoplay loop muted playsinline>
+            <source src="https://onedrive.live.com/embed?id=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f?cid=FB0EC3B98E868084&resId=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f&ithint=video&e=NP1oiu&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy9mYjBlYzNiOThlODY4MDg0L0VSejF5TmtqZEhGRGtLalhiNngzZnc4QmNJUWd0TzBzWFFmRnozdmdTNFhqYXc_ZT1OUDFvaXU" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
             <h2 style="color: #FFD700;">Hit the Cat 10 Times! 🐱</h2>
             <p id="hit-counter" style="color: white;">Hits: 0/10</p>
             <img id="wolfy-cat" src="WOLFY.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px;">
