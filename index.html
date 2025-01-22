@@ -268,9 +268,9 @@
                 document.getElementById("password-section-wolfyy").style.display = "none";
                 document.getElementById("wolfyy-game").style.display = "block";
         
-                // Start de video na wachtwoordinvoer
                 let video = document.getElementById("wolfyy-video");
-                video.play().catch(error => console.log("Autoplay prevented", error));
+                video.src = "https://onedrive.live.com/embed?id=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f?cid=FB0EC3B98E868084&resId=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f&ithint=video&e=NP1oiu&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy9mYjBlYzNiOThlODY4MDg0L0VSejF5TmtqZEhGRGtLalhiNngzZnc4QmNJUWd0TzBzWFFmRnozdmdTNFhqYXc_ZT1OUDFvaXU";
+                video.play().catch(error => console.log("Autoplay blocked:", error));
             } else {
                 alert("Nope, try again! 🐍");
             }
