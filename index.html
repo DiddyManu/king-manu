@@ -21,6 +21,16 @@
             position: relative;
             -webkit-overflow-scrolling: touch; /* Vloeiend scrollen op mobiel */
         }
+        #wolfyy-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
         .video-container {
             position: absolute;
             top: 0;
@@ -388,15 +398,15 @@
             <button onclick="checkWolfyyGamePassword()">Unlock</button>
         </div>
         
-        <div class="section" id="wolfyy-game" style="display: none; text-align: center;">
+        <div class="section" id="wolfyy-game" style="display: none; text-align: center; position: relative;">
             <video id="wolfyy-video" autoplay loop muted playsinline>
                 <source src="https://onedrive.live.com/embed?id=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f?cid=FB0EC3B98E868084&resId=FB0EC3B98E868084!sd9c8f51c7423437190a8d76fac777f0f&ithint=video&e=NP1oiu&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3YvYy9mYjBlYzNiOThlODY4MDg0L0VSejF5TmtqZEhGRGtLalhiNngzZnc4QmNJUWd0TzBzWFFmRnozdmdTNFhqYXc_ZT1OUDFvaXU" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <h2 style="color: #FFD700;">Hit the Cat 10 Times! 🐱</h2>
-            <p id="hit-counter" style="color: white;">Hits: 0/10</p>
-            <img id="wolfy-cat" src="WOLFY.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px;">
-            <p id="funny-text" style="color: #FFD700; font-weight: bold; margin-top: 20px;">Let's see what happens...</p>
+            <h2 style="color: #FFD700; position: relative; z-index: 1;">Hit the Cat 10 Times! 🐱</h2>
+            <p id="hit-counter" style="color: white; position: relative; z-index: 1;">Hits: 0/10</p>
+            <img id="wolfy-cat" src="WOLFY.gif" alt="Funny Cat" onclick="hitTheCat()" style="cursor: pointer; width: 200px; height: auto; border: 5px solid #FFD700; border-radius: 10px; position: relative; z-index: 1;">
+            <p id="funny-text" style="color: #FFD700; font-weight: bold; margin-top: 20px; position: relative; z-index: 1;">Let's see what happens...</p>
         </div>
         <!-- About Me Section -->
         <div class="section bio active" id="about-me">
