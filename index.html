@@ -23,10 +23,10 @@
         }
         #wolfyy-video {
             position: absolute;
-            top: 0;
+            top: 50px; /* Verplaats de video 50 pixels naar beneden */
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 50px); /* Pas de hoogte aan zodat het onder de header past */
             object-fit: cover;
             z-index: -1;
         }
